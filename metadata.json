@@ -1,0 +1,8 @@
+{
+  "name": "Compux - Campus Social Network",
+  "description": "منصة التواصل الجامعي والأكاديمي للطلاب - منشورات، فعاليات، مجموعات دراسية، ورسائل مباشرة بتصميم هندسي متطور.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

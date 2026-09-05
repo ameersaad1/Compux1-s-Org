@@ -1,0 +1,642 @@
+{
+  "users": [
+    {
+      "id": "dev",
+      "email": "dev@compux.edu",
+      "password": "compux_admin",
+      "name": "Ameer Saad (Dev)",
+      "handle": "ameer_dev",
+      "role": "Lead Platform Engineer",
+      "bio": "Computer Science & Engineering | Building the next generation campus social network at Compux.",
+      "university": "Baghdad University",
+      "faculty": "College of Engineering",
+      "major": "Computer Engineering",
+      "studyLevel": "Senior",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&auto=format",
+      "coverUrl": "https://images.unsplash.com/photo-1562774053-701939374585?w=900&h=300&fit=crop&auto=format",
+      "isAdmin": true,
+      "isVerified": true,
+      "verificationPending": false,
+      "verificationColor": "#7c3aed",
+      "followers": [
+        "u_sarah",
+        "u_omar",
+        "u_nour"
+      ],
+      "following": [
+        "u_sarah",
+        "u_omar"
+      ],
+      "postCount": 14,
+      "studyHours": 120,
+      "badges": [
+        {
+          "id": "b_code",
+          "name": "Code Master",
+          "nameAr": "خبير البرمجة",
+          "desc": "Authored 50+ code snippets & technical discussions",
+          "descAr": "نشر أكثر من 50 نموذجاً برمجياً ومناقشة تقنية",
+          "emoji": "💻",
+          "color": "#6d5ef5",
+          "earnedAt": "Aug 2026"
+        },
+        {
+          "id": "b_mentor",
+          "name": "Campus Mentor",
+          "nameAr": "مرشد أكاديمي",
+          "desc": "Guided 20+ junior students through projects",
+          "descAr": "أرشد أكثر من 20 طالباً مستجداً في مشاريعهم",
+          "emoji": "🌟",
+          "color": "#f59e0b",
+          "earnedAt": "Jul 2026"
+        },
+        {
+          "id": "b_event",
+          "name": "Event Lead",
+          "nameAr": "منظم فعاليات",
+          "desc": "Organized 5+ campus hackathons & meetups",
+          "descAr": "نظم أكثر من 5 ملتقيات وهاكاثونات جامعية",
+          "emoji": "🎯",
+          "color": "#3b82f6",
+          "earnedAt": "Jun 2026"
+        }
+      ],
+      "github": "https://github.com/ameersaad1",
+      "linkedin": "https://linkedin.com",
+      "phone": "+964 770 123 4567",
+      "phoneVerified": true,
+      "showPhone": false,
+      "banned": false
+    },
+    {
+      "id": "u_sarah",
+      "email": "sarah@compux.edu",
+      "password": "password123",
+      "name": "Sarah Al-Hassan",
+      "handle": "sarah_tech",
+      "role": "AI & Data Science Student",
+      "bio": "Deep Learning enthusiast | President of Google Developer Student Club | Passionate about NLP.",
+      "university": "Technology University",
+      "faculty": "College of Information Technology",
+      "major": "Artificial Intelligence",
+      "studyLevel": "Junior",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&auto=format",
+      "coverUrl": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&h=300&fit=crop&auto=format",
+      "isAdmin": false,
+      "isVerified": true,
+      "verificationPending": false,
+      "verificationColor": "#22c55e",
+      "followers": [
+        "dev",
+        "u_omar"
+      ],
+      "following": [
+        "dev"
+      ],
+      "postCount": 9,
+      "studyHours": 85,
+      "badges": [
+        {
+          "id": "b_code",
+          "name": "Code Master",
+          "nameAr": "خبير البرمجة",
+          "desc": "Authored 50+ code snippets & technical discussions",
+          "descAr": "نشر أكثر من 50 نموذجاً برمجياً ومناقشة تقنية",
+          "emoji": "💻",
+          "color": "#6d5ef5",
+          "earnedAt": "Aug 2026"
+        },
+        {
+          "id": "b_research",
+          "name": "Top Researcher",
+          "nameAr": "باحث متميز",
+          "desc": "Published academic paper and shared research notes",
+          "descAr": "نشر ورقة بحثية وشارك ملخصات المذاكرة المعتمدة",
+          "emoji": "🔬",
+          "color": "#22c55e",
+          "earnedAt": "May 2026"
+        }
+      ],
+      "github": "https://github.com",
+      "linkedin": "https://linkedin.com",
+      "phone": "+964 771 987 6543",
+      "phoneVerified": true,
+      "showPhone": true,
+      "banned": false
+    },
+    {
+      "id": "u_omar",
+      "email": "omar@compux.edu",
+      "password": "password123",
+      "name": "Omar K. Al-Bayati",
+      "handle": "omar_dev",
+      "role": "Software Architect",
+      "bio": "React, TypeScript & Rust fanatic. Love building fast, accessible web platforms.",
+      "university": "Baghdad University",
+      "faculty": "College of Science",
+      "major": "Computer Science",
+      "studyLevel": "Senior",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&auto=format",
+      "coverUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&h=300&fit=crop&auto=format",
+      "isAdmin": false,
+      "isVerified": true,
+      "verificationPending": false,
+      "verificationColor": "#3b82f6",
+      "followers": [
+        "dev"
+      ],
+      "following": [
+        "dev",
+        "u_sarah"
+      ],
+      "postCount": 7,
+      "studyHours": 92,
+      "badges": [
+        {
+          "id": "b_code",
+          "name": "Code Master",
+          "nameAr": "خبير البرمجة",
+          "desc": "Authored 50+ code snippets & technical discussions",
+          "descAr": "نشر أكثر من 50 نموذجاً برمجياً ومناقشة تقنية",
+          "emoji": "💻",
+          "color": "#6d5ef5",
+          "earnedAt": "Aug 2026"
+        }
+      ],
+      "github": "https://github.com",
+      "phoneVerified": false,
+      "showPhone": false,
+      "banned": false
+    },
+    {
+      "id": "u_nour",
+      "email": "nour@compux.edu",
+      "password": "password123",
+      "name": "Nour Tariq",
+      "handle": "nour_ui",
+      "role": "UX/UI Designer & Researcher",
+      "bio": "Transforming complex academic workflows into delightful, human-friendly experiences.",
+      "university": "Mustansiriyah University",
+      "faculty": "College of Fine Arts & Design",
+      "major": "Digital Media Design",
+      "studyLevel": "Sophomore",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&auto=format",
+      "coverUrl": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=900&h=300&fit=crop&auto=format",
+      "isAdmin": false,
+      "isVerified": false,
+      "verificationPending": true,
+      "verificationColor": "#7c3aed",
+      "followers": [
+        "dev",
+        "u_sarah"
+      ],
+      "following": [
+        "dev"
+      ],
+      "postCount": 4,
+      "studyHours": 46,
+      "badges": [
+        {
+          "id": "b_design",
+          "name": "UI/UX Artisan",
+          "nameAr": "فنان واجهات وتجربة",
+          "desc": "Contributed campus design systems & prototypes",
+          "descAr": "ساهم في تصاميم ومخططات الأنظمة الجامعية",
+          "emoji": "🎨",
+          "color": "#ec4899",
+          "earnedAt": "Apr 2026"
+        },
+        {
+          "id": "b_fresh",
+          "name": "New Student",
+          "nameAr": "طالب جديد",
+          "desc": "Joined the official campus network",
+          "descAr": "انضم رسمياً لشبكة الحرم الجامعي",
+          "emoji": "🌱",
+          "color": "#10b981",
+          "earnedAt": "Sep 2026"
+        }
+      ],
+      "banned": false
+    },
+    {
+      "id": "u_1788531683748",
+      "email": "ali.test@uob.edu",
+      "password": "password123",
+      "name": "Ali Hassan",
+      "handle": "ali_hassan",
+      "role": "علوم الحاسوب Student",
+      "bio": "طالب في جامعة بغداد · تخصص علوم الحاسوب. مستعد للمذاكرة ومشاركة المعرفة.",
+      "university": "جامعة بغداد",
+      "faculty": "Engineering & Science",
+      "major": "علوم الحاسوب",
+      "studyLevel": "Freshman",
+      "avatar": "https://images.unsplash.com/photo-1628157582853-a796fa650a6a?w=200&h=200&fit=crop&auto=format",
+      "coverUrl": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&h=300&fit=crop&auto=format",
+      "isAdmin": false,
+      "isVerified": false,
+      "verificationPending": false,
+      "verificationColor": "#7c3aed",
+      "followers": [],
+      "following": [
+        "dev"
+      ],
+      "postCount": 0,
+      "studyHours": 0,
+      "badges": [
+        {
+          "id": "b_fresh",
+          "name": "New Student",
+          "nameAr": "طالب جديد",
+          "desc": "Joined the official campus network",
+          "descAr": "انضم رسمياً لشبكة الحرم الجامعي",
+          "emoji": "🌱",
+          "color": "#10b981",
+          "earnedAt": "Sep 2026"
+        }
+      ],
+      "github": "",
+      "linkedin": "",
+      "phone": "",
+      "phoneVerified": false,
+      "showPhone": false,
+      "banned": false,
+      "createdAt": "2026-09-04T14:21:23.748Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": 101,
+      "authorId": "dev",
+      "content": "🚀 Welcome to Compux! Complete campus social and academic network. Real-time server sync, study circles, note sharing, and interactive notifications are now live! #Compux #CampusLife #WebDev",
+      "time": "10m ago",
+      "likes": 43,
+      "likedBy": [
+        "dev",
+        "u_sarah",
+        "u_omar",
+        "u_1788531683748"
+      ],
+      "shares": 11,
+      "comments": [
+        {
+          "id": 1001,
+          "authorId": "u_sarah",
+          "text": "The new server architecture is fast, and accounts are completely persistent! Amazing work Ameer.",
+          "time": "5m ago",
+          "likes": 6,
+          "replies": []
+        },
+        {
+          "id": 1002,
+          "authorId": "u_omar",
+          "text": "Loving the typography and spacing system. Truly modern campus platform.",
+          "time": "3m ago",
+          "likes": 4,
+          "replies": []
+        }
+      ],
+      "hashtags": [
+        "Compux",
+        "CampusLife",
+        "WebDev"
+      ],
+      "tag": "Announcement",
+      "tagColor": "#6d5ef5",
+      "pinned": true,
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=450&fit=crop&auto=format"
+    },
+    {
+      "id": 102,
+      "authorId": "u_sarah",
+      "content": "We're hosting a hands-on workshop this Thursday on Fine-tuning Open LLMs for Arabic NLP tasks. Everyone interested in AI and Data Science is invited! Check out the event page to RSVP. #ArtificialIntelligence #NLP #MachineLearning",
+      "time": "1h ago",
+      "likes": 29,
+      "likedBy": [
+        "dev",
+        "u_omar"
+      ],
+      "shares": 8,
+      "comments": [
+        {
+          "id": 1003,
+          "authorId": "dev",
+          "text": "Count me in! Let me know if you need projector or venue prep.",
+          "time": "45m ago",
+          "likes": 2,
+          "replies": []
+        }
+      ],
+      "hashtags": [
+        "ArtificialIntelligence",
+        "NLP",
+        "MachineLearning"
+      ],
+      "tag": "Workshop",
+      "tagColor": "#3b82f6"
+    },
+    {
+      "id": 103,
+      "authorId": "u_omar",
+      "content": "Just uploaded the complete exam review summary for Advanced Algorithms & Data Structures (Graph Theory, Dynamic Programming, Complexity Analysis). Available in the study resources section. #Algorithms #DataStructures #StudyGuide",
+      "time": "3h ago",
+      "likes": 38,
+      "likedBy": [
+        "dev",
+        "u_sarah"
+      ],
+      "shares": 19,
+      "comments": [],
+      "hashtags": [
+        "Algorithms",
+        "DataStructures",
+        "StudyGuide"
+      ],
+      "tag": "Resource",
+      "tagColor": "#22c55e"
+    }
+  ],
+  "events": [
+    {
+      "id": 201,
+      "title": "Annual Campus Hackathon 2026",
+      "category": "Competition",
+      "description": "48-hour collaborative buildathon solving local urban & educational challenges.",
+      "date": "Sep 18, 2026",
+      "time": "10:00 AM",
+      "location": "Main Engineering Hall B",
+      "emoji": "⚡",
+      "color": "#6d5ef5",
+      "attending": [
+        "dev",
+        "u_sarah",
+        "u_omar"
+      ],
+      "hashtags": [
+        "Hackathon",
+        "Buildathon"
+      ]
+    },
+    {
+      "id": 202,
+      "title": "Hands-on Arabic NLP Workshop",
+      "category": "Workshop",
+      "description": "Learn modern tokenization, transformer architectures, and fine-tuning datasets.",
+      "date": "Sep 12, 2026",
+      "time": "02:00 PM",
+      "location": "Computer Lab 4",
+      "emoji": "🤖",
+      "color": "#3b82f6",
+      "attending": [
+        "dev",
+        "u_sarah"
+      ],
+      "hashtags": [
+        "NLP",
+        "AI"
+      ]
+    },
+    {
+      "id": 203,
+      "title": "Open Source Club Meetup",
+      "category": "Networking",
+      "description": "Contributing to your first open-source project and writing clear pull requests.",
+      "date": "Sep 22, 2026",
+      "time": "04:30 PM",
+      "location": "Student Innovation Lounge",
+      "emoji": "🌐",
+      "color": "#10b981",
+      "attending": [
+        "u_omar",
+        "u_nour"
+      ],
+      "hashtags": [
+        "OpenSource",
+        "GitHub"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "g_algo",
+      "name": "Advanced Algorithms Cohort",
+      "subject": "Computer Science · Dr. Tariq",
+      "members": [
+        "dev",
+        "u_omar",
+        "u_sarah"
+      ],
+      "maxMembers": 12,
+      "nextSession": "Tomorrow, 4:00 PM",
+      "color": "#6d5ef5",
+      "active": true
+    },
+    {
+      "id": "g_ai",
+      "name": "Computer Vision & Deep Learning",
+      "subject": "Artificial Intelligence · Lab 2",
+      "members": [
+        "u_sarah",
+        "dev"
+      ],
+      "maxMembers": 8,
+      "nextSession": "Wednesday, 6:00 PM",
+      "color": "#3b82f6",
+      "active": true
+    },
+    {
+      "id": "g_calc",
+      "name": "Applied Calculus & Linear Algebra",
+      "subject": "Mathematics & Physics Dept",
+      "members": [
+        "u_nour"
+      ],
+      "maxMembers": 15,
+      "nextSession": "Sunday, 11:00 AM",
+      "color": "#f59e0b",
+      "active": false
+    }
+  ],
+  "resources": [
+    {
+      "id": "r_1",
+      "title": "Data Structures & Graph Algorithms Comprehensive Guide",
+      "subject": "Computer Science",
+      "fileType": "pdf",
+      "downloads": 148,
+      "uploadedBy": "u_omar",
+      "uploadedAt": "Aug 28, 2026",
+      "fileSize": "4.2 MB"
+    },
+    {
+      "id": "r_2",
+      "title": "Machine Learning & PyTorch Practical Labs Notes",
+      "subject": "Artificial Intelligence",
+      "fileType": "pdf",
+      "downloads": 94,
+      "uploadedBy": "u_sarah",
+      "uploadedAt": "Sep 01, 2026",
+      "fileSize": "2.8 MB"
+    },
+    {
+      "id": "r_3",
+      "title": "Operating Systems Lecture Slides & Past Exams",
+      "subject": "Computer Engineering",
+      "fileType": "ppt",
+      "downloads": 62,
+      "uploadedBy": "dev",
+      "uploadedAt": "Aug 20, 2026",
+      "fileSize": "11.5 MB"
+    }
+  ],
+  "reports": [
+    {
+      "id": "rep_1",
+      "postId": 103,
+      "reportedBy": "u_nour",
+      "reason": "Verify textbook copyright licensing notice",
+      "status": "pending",
+      "createdAt": "Sep 03, 2026"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1788531693923",
+      "type": "like",
+      "fromId": "u_1788531683748",
+      "recipientId": "dev",
+      "text": "أُعجب Ali Hassan بمنشورك: \"🚀 Welcome to Compux! Complete campus so...\"",
+      "time": "الآن",
+      "read": false,
+      "targetType": "post",
+      "targetId": 101
+    },
+    {
+      "id": "notif_1788531683748",
+      "type": "verify",
+      "fromId": "dev",
+      "recipientId": "u_1788531683748",
+      "text": "مرحباً بك في منصة Compux يا Ali Hassan! تم حفظ وتسجيل بياناتك في السيرفر الجامعي بنجاح.",
+      "time": "الآن",
+      "read": false,
+      "targetType": "profile",
+      "targetId": "u_1788531683748"
+    },
+    {
+      "id": "notif_1",
+      "type": "like",
+      "fromId": "u_sarah",
+      "recipientId": "dev",
+      "text": "Sarah Al-Hassan أُعجبت بمنشورك الترحيبي",
+      "time": "5m ago",
+      "read": false,
+      "targetType": "post",
+      "targetId": 101
+    },
+    {
+      "id": "notif_2",
+      "type": "comment",
+      "fromId": "u_omar",
+      "recipientId": "dev",
+      "text": "Omar K. علق على منشورك: 'Loving the typography and spacing system.'",
+      "time": "15m ago",
+      "read": false,
+      "targetType": "post",
+      "targetId": 101
+    },
+    {
+      "id": "notif_3",
+      "type": "event",
+      "fromId": "u_sarah",
+      "recipientId": "dev",
+      "text": "تسجيل حضور جديد في ورشة: Hands-on Arabic NLP Workshop",
+      "time": "1h ago",
+      "read": true,
+      "targetType": "event",
+      "targetId": 202
+    }
+  ],
+  "dms": [
+    {
+      "userId": "u_sarah",
+      "unread": 1,
+      "messages": [
+        {
+          "from": "u_sarah",
+          "text": "Hey Ameer! Are we still reviewing the platform layout today?",
+          "time": "11:20 AM"
+        },
+        {
+          "from": "dev",
+          "text": "Yes! All components and persistent server APIs are live.",
+          "time": "11:25 AM"
+        },
+        {
+          "from": "u_sarah",
+          "text": "Awesome, let me know when it's live!",
+          "time": "11:28 AM"
+        }
+      ]
+    },
+    {
+      "userId": "u_omar",
+      "unread": 0,
+      "messages": [
+        {
+          "from": "u_omar",
+          "text": "I shared the algorithm notes with the study group.",
+          "time": "Yesterday"
+        },
+        {
+          "from": "dev",
+          "text": "Great, I'll pin them to the resources tab.",
+          "time": "Yesterday"
+        }
+      ]
+    }
+  ],
+  "analytics": {
+    "dailyUsers": [
+      142,
+      168,
+      195,
+      230,
+      280,
+      340,
+      420,
+      490,
+      560,
+      620,
+      710,
+      840
+    ],
+    "labels": [
+      "Aug 24",
+      "Aug 26",
+      "Aug 28",
+      "Aug 30",
+      "Sep 01",
+      "Sep 02",
+      "Sep 03",
+      "Sep 04",
+      "Sep 05",
+      "Sep 06",
+      "Sep 07",
+      "Sep 08"
+    ],
+    "dailyPosts": [
+      18,
+      25,
+      32,
+      28,
+      45,
+      52,
+      64,
+      58,
+      70,
+      85,
+      94,
+      110
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+// Prisma Schema for Compux Dynamic Profile System
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  STUDENT
+  ADMIN
+  MODERATOR
+}
+
+model User {
+  id               String           @id @default(uuid()) @db.Uuid
+  username         String           @unique @db.VarChar(32)
+  email            String           @unique @db.VarChar(255)
+  passwordHash     String           @db.VarChar(255)
+  fullName         String           @db.VarChar(100)
+  bio              String?          @db.VarChar(500)
+  avatarUrl        String?          @db.Text
+  coverUrl         String?          @db.Text
+  university       String?          @db.VarChar(120)
+  faculty          String?          @db.VarChar(120)
+  major            String?          @db.VarChar(120)
+  studyLevel       String?          @db.VarChar(50)
+  phone            String?          @db.VarChar(30)
+  phoneVerified    Boolean          @default(false)
+  role             Role             @default(STUDENT)
+  isVerified       Boolean          @default(false)
+  verificationColor String?         @default("#7c3aed")
+  isActive         Boolean          @default(true)
+  banned           Boolean          @default(false)
+
+  // Decoupled Relations
+  profileStats     ProfileStats?
+  preferences      UserPreferences?
+  followers        Follow[]         @relation("FollowingUsers")
+  following        Follow[]         @relation("UserFollowers")
+  notifications    Notification[]
+  posts            Post[]
+  reports          Report[]
+
+  // Security & Auditing
+  refreshTokenHash String?          @db.VarChar(255)
+  lastLoginAt      DateTime?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  @@index([username])
+  @@index([email])
+}
+
+model ProfileStats {
+  id               String   @id @default(uuid()) @db.Uuid
+  userId           String   @unique @db.Uuid
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  followersCount   Int      @default(0)
+  followingCount   Int      @default(0)
+  postsCount       Int      @default(0)
+  studyHours       Int      @default(0)
+  reputationPoints Int      @default(0)
+  updatedAt        DateTime @updatedAt
+}
+
+model UserPreferences {
+  id          String   @id @default(uuid()) @db.Uuid
+  userId      String   @unique @db.Uuid
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  theme       String   @default("system") // "light" | "dark" | "system"
+  language    String   @default("ar")     // "ar" | "en"
+  emailAlerts Boolean  @default(true)
+  pushAlerts  Boolean  @default(true)
+  isPrivate   Boolean  @default(false)
+}
+
+model Follow {
+  followerId  String   @db.Uuid
+  followingId String   @db.Uuid
+  follower    User     @relation("UserFollowers", fields: [followerId], references: [id], onDelete: Cascade)
+  following   User     @relation("FollowingUsers", fields: [followingId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+
+  @@id([followerId, followingId])
+  @@index([followerId])
+  @@index([followingId])
+}
+
+model Post {
+  id        String   @id @default(uuid()) @db.Uuid
+  authorId  String   @db.Uuid
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  content   String   @db.Text
+  image     String?  @db.Text
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([authorId])
+}
+
+model Notification {
+  id          String   @id @default(uuid()) @db.Uuid
+  recipientId String   @db.Uuid
+  recipient   User     @relation(fields: [recipientId], references: [id], onDelete: Cascade)
+  actorId     String   @db.Uuid
+  type        String   // "like" | "comment" | "follow" | "verify" | "event"
+  message     String   @db.VarChar(255)
+  targetType  String   // "post" | "profile" | "event"
+  targetId    String   @db.VarChar(100)
+  isRead      Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@index([recipientId, isRead])
+}
+
+model Report {
+  id          String   @id @default(uuid()) @db.Uuid
+  reportedBy  String   @db.Uuid
+  reporter    User     @relation(fields: [reportedBy], references: [id], onDelete: Cascade)
+  targetId    String   @db.VarChar(100)
+  reason      String   @db.VarChar(255)
+  status      String   @default("pending") // "pending" | "resolved" | "dismissed"
+  createdAt   DateTime @default(now())
+}
