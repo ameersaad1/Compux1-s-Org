@@ -7,7 +7,7 @@ import { DirectMessages } from './components/DirectMessages';
 import { ProfileSettings } from './components/ProfileSettings';
 import { RecommendationFeed } from './components/RecommendationFeed';
 import { ImageUploader } from './components/ImageUploader';
-
+import { parseHashtagsFromContent, registerPostHashtags, getDynamicTrendingHashtags } from './data/dictionary';
 export interface UserProfile {
   id: string;
   name: string;
