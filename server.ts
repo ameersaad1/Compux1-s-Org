@@ -1736,5 +1736,48 @@ async function startServer() {
     console.log(`Compux Full-Stack Server running at http://0.0.0.0:${PORT}`);
   });
 }
+// ==========================================
+// API Endpoints للمنشورات والرسائل الفورية
+// ==========================================
 
+// 1. جلب المنشورات من قاعدة البيانات
+app.get('/api/posts', async (req, res) => {
+  try {
+    const db = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
+    res.json(db.posts || []);
+  } catch (error) {
+    res.status(500).json({ error: 'حدث خطأ أثناء جلب المنشورات' });
+  }
+});
+
+// 2. نشر منشور جديد باسم المستخدم المسجل فعلياً
+app.post('/api/posts', async (req, res) => {
+  const { content, authorId, image } = req.body;
+  if (!content || !authorId) {
+    return res.status(400).json({ error: 'محتوى المنشور ومعرف المستخدم مطلوبان' });
+  }
+
+  try {
+    const db = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
+    const newPost = {
+      id: Date.now(),
+      authorId,
+      content: sanitizeString(content),
+      image: image || null,
+      time: 'الآن',
+      likes: 0,
+      likedBy: [],
+      shares: 0,
+      comments: [],
+      hashtags: [],
+    };
+
+    db.posts.unshift(newPost);
+    fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2));
+
+    res.status(201).json(newPost);
+  } catch (error) {
+    res.status(500).json({ error: 'فشل في حفظ المنشور' });
+  }
+});
 startServer();
