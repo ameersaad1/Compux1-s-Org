@@ -127,3 +127,32 @@ model Report {
   status      String   @default("pending") // "pending" | "resolved" | "dismissed"
   createdAt   DateTime @default(now())
 }
+// ==========================================
+// التحديثات الجديدة: التعليقات والرسائل المباشرة
+// ==========================================
+
+model Comment {
+  id        String   @id @default(uuid()) @db.Uuid
+  text      String   @db.Text
+  postId    String   @db.Uuid
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  authorId  String   @db.Uuid
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([postId])
+  @@index([authorId])
+}
+
+model DirectMessage {
+  id         String   @id @default(uuid()) @db.Uuid
+  senderId   String   @db.Uuid
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiverId String   @db.Uuid
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  text       String   @db.Text
+  createdAt  DateTime @default(now())
+
+  @@index([senderId])
+  @@index([receiverId])
+}
