@@ -8,7 +8,6 @@ import { ProfileSettings } from './components/ProfileSettings';
 import { RecommendationFeed } from './components/RecommendationFeed';
 import { ImageUploader } from './components/ImageUploader';
 
-// 1. تعريف واجهة بيانات المستخدم الحقيقي
 export interface UserProfile {
   id: string;
   name: string;
@@ -17,7 +16,6 @@ export interface UserProfile {
   isVerified?: boolean;
 }
 
-// 2. تعريف واجهة المنشور الحقيقي
 export interface Post {
   id: string | number;
   author: UserProfile;
@@ -31,25 +29,19 @@ export interface Post {
 
 export function App() {
   const [activeTab, setActiveTab] = useState('home');
-
-  // حالة الحساب المسجل حالياً (يبدأ بـ null إذا لم يسجل الدخول)
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
-
-  // قائمة المنشورات الحقيقية في قاعدة البيانات
   const [posts, setPosts] = useState<Post[]>([]);
   const [newPostContent, setNewPostContent] = useState('');
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
 
-  // محاكاة استدعاء بيانات المستخدم وقاعدة البيانات عند فتح التطبيق
   useEffect(() => {
-    // هنا يتم جلب بيانات المستخدم المسجل فعلياً عبر Supabase Auth
-    // مثال لربط بيانات جلسة التسجيل الحقيقية:
+    // جلب بيانات الجلسة الحقيقية للمستخدم عند تسجيل الدخول
     const fetchUserData = async () => {
-      // إذا كان هناك جلسة حقيقية سنحصل على الاسم واليوزرنيم الخاص به
+      // سيتم ربطها بـ Supabase Auth للحصول على بيانات الحساب الفعلي
       const loggedInUser: UserProfile = {
         id: 'user_123',
-        name: 'المستخدم الحالي', // يستبدل بـ session.user.user_metadata.full_name
-        username: 'user_handle', // يستبدل بـ session.user.user_metadata.username
+        name: 'المستخدم الحالي',
+        username: 'user_handle',
         avatarUrl: '',
       };
       setCurrentUser(loggedInUser);
@@ -58,7 +50,6 @@ export function App() {
     fetchUserData();
   }, []);
 
-  // دالة إنشاء منشور حقيقي باسم المستخدم المسجل حالياً
   const handleCreatePost = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newPostContent.trim() || !currentUser) return;
@@ -79,7 +70,6 @@ export function App() {
       repostsCount: 0,
     };
 
-    // إضافة المنشور للقائمة وإعادة ضبط الحقول
     setPosts([newPost, ...posts]);
     setNewPostContent('');
     setSelectedImage(null);
@@ -88,20 +78,16 @@ export function App() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 flex justify-center">
       <div className="flex w-full max-w-7xl">
-        {/* الشريط الجانبي - يمرر له بيانات المستخدم الحقيقي */}
         <Sidebar activeTab={activeTab} onNavigate={(tab) => setActiveTab(tab)} />
 
-        {/* المحتوى الرئيسي */}
         <main className="flex-1 max-w-2xl border-r border-gray-200 dark:border-gray-800 min-h-screen">
           <header className="sticky top-0 z-10 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 p-3.5 flex items-center justify-between gap-4">
             <h1 className="text-lg font-bold tracking-tight capitalize">{activeTab}</h1>
             <SearchBar />
           </header>
 
-          {/* تبويب الرئيسية */}
           {activeTab === 'home' && (
             <div>
-              {/* نموذج إضافة منشور جديد باسم المستخدم المسجل فقط */}
               {currentUser ? (
                 <form onSubmit={handleCreatePost} className="p-4 border-b border-gray-200 dark:border-gray-800 space-y-3">
                   <div className="flex space-x-3 rtl:space-x-reverse">
@@ -136,7 +122,6 @@ export function App() {
                 </div>
               )}
 
-              {/* عرض المنشورات الحقيقية المخزنة */}
               <div className="divide-y divide-gray-200 dark:divide-gray-800">
                 {posts.length > 0 ? (
                   posts.map((post) => (
