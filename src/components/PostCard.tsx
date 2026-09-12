@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Heart, MessageSquare, Repeat2, Share2, MoreHorizontal } from 'lucide-react';
+import { CommentSection } from './CommentSection';
 
 interface PostCardProps {
+  id: number;
   authorName: string;
   username: string;
   avatarUrl?: string;
@@ -13,21 +15,23 @@ interface PostCardProps {
 }
 
 export const PostCard: React.FC<PostCardProps> = ({
+  id,
   authorName,
   username,
   avatarUrl,
   content,
   createdAt,
   likesCount: initialLikes,
-  commentsCount,
+  commentsCount: initialCommentsCount,
   repostsCount,
 }) => {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(initialLikes);
+  const [showComments, setShowComments] = useState(false);
 
   const handleLike = () => {
     setIsLiked(!isLiked);
-    setLikes(prev => (isLiked ? prev - 1 : prev + 1));
+    setLikes((prev) => (isLiked ? prev - 1 : prev + 1));
   };
 
   return (
@@ -62,14 +66,19 @@ export const PostCard: React.FC<PostCardProps> = ({
             {content}
           </p>
 
-          {/* شريط أزرار التفاعل مستوحى من Bluesky و Shadcn */}
+          {/* شريط الأزرار والتفاعل */}
           <div className="flex justify-between items-center mt-3 max-w-md text-gray-500 text-sm">
-            {/* التعليقات */}
-            <button className="flex items-center space-x-1.5 rtl:space-x-reverse hover:text-blue-500 transition-colors group">
+            {/* التعليقات (عند الضغط تظهر/تختفي التعليقات) */}
+            <button
+              onClick={() => setShowComments(!showComments)}
+              className={`flex items-center space-x-1.5 rtl:space-x-reverse hover:text-blue-500 transition-colors group ${
+                showComments ? 'text-blue-600' : ''
+              }`}
+            >
               <div className="p-2 rounded-full group-hover:bg-blue-50 dark:group-hover:bg-blue-950/40">
                 <MessageSquare className="w-4 h-4" />
               </div>
-              <span className="text-xs">{commentsCount}</span>
+              <span className="text-xs">{initialCommentsCount}</span>
             </button>
 
             {/* إعادة النشر */}
@@ -100,6 +109,9 @@ export const PostCard: React.FC<PostCardProps> = ({
               </div>
             </button>
           </div>
+
+          {/* قسم التعليقات اللحظية عند التفعيل */}
+          {showComments && <CommentSection postId={id} />}
         </div>
       </div>
     </div>
